@@ -1,18 +1,15 @@
-import 'package:bloc/bloc.dart';
-import 'package:flutter/cupertino.dart';
+
+// ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 import 'package:news_app_eg/const/network/remote/dio_helper.dart';
 import 'package:news_app_eg/model/business/business_screen.dart';
 import 'package:news_app_eg/model/science/science_screen.dart';
 import 'package:news_app_eg/model/sports/sports_screen.dart';
 import 'package:news_app_eg/modules/settings.dart';
 import 'package:news_app_eg/shared/cache_helper.dart';
-
 part 'news_state.dart';
-
 class NewsCubit extends Cubit<NewsState> {
   NewsCubit() : super(NewsInitial());
 
@@ -27,10 +24,10 @@ class NewsCubit extends Cubit<NewsState> {
         icon: Icon(Icons.settings), label: 'Settings'),
   ];
   List<Widget> screens = [
-    TechnologyScreen(),
-     SportsScreen(),
-     SciencesScreen(),
-     SettingsScreen(),
+    const TechnologyScreen(),
+    const SportsScreen(),
+    const  SciencesScreen(),
+    const  SettingsScreen(),
   ];
 
   void changeBottomNavBar(int index) {

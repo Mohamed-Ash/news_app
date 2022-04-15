@@ -1,6 +1,5 @@
 
 import 'package:buildcondition/buildcondition.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app_eg/modules/webview_screen/webview_screen.dart';
 
