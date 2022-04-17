@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors
 
-import 'package:buildcondition/buildcondition.dart';
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app_eg/business/news_cubit.dart';
@@ -14,8 +15,7 @@ import 'package:news_app_eg/const/network/get_news_api.dart';
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsState>(
       listener: (context, state) {
-       // ignore: todo
-       // TODO: implement listener
+
       },
       builder: (context, state) {
         var list =NewsCubit.get(context).search;
@@ -51,13 +51,30 @@ import 'package:news_app_eg/const/network/get_news_api.dart';
   }
 } */
 class SearchScreen extends StatelessWidget {
+
+  NewsCubit cubit = NewsCubit.get(BuildContext);
+
   var searchController = TextEditingController();
+  
+  getSearch(){
+      if(cubit.search.isNotEmpty) {
+        Expanded(
+          child: articleBuilder(
+            cubit.search,
+            context,
+          ),
+        );
+      } else {
+          const CircularProgressIndicator();
+      }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewsCubit, NewsState>(
       listener: (BuildContext context, state) {},
       builder: (BuildContext context, state) {
-        NewsCubit cubit = NewsCubit.get(context);
         return Scaffold(
           appBar: AppBar(),
           body: Column(
@@ -80,7 +97,8 @@ class SearchScreen extends StatelessWidget {
                   type: TextInputType.text,
                 ),
               ),
-              BuildCondition(
+              
+            /*   BuildCondition(
                 condition: (cubit.search.isNotEmpty),
                 builder: (BuildContext context) {
                   return Expanded(
@@ -95,7 +113,7 @@ class SearchScreen extends StatelessWidget {
                     child: CircularProgressIndicator(),
                   );
                 },
-              ),
+              ), */
             ],
           ),
         );

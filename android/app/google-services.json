@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "807276755709",
+    "project_id": "testfirebase-23b5e",
+    "storage_bucket": "testfirebase-23b5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807276755709:android:df2a938b4abcc4a0891c94",
+        "android_client_info": {
+          "package_name": "com.example.news_app_eg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807276755709-1qhofof485sihremmlc372oiq45lrmv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWMteQRrt0F92yIXZ-rt7gT5V3pMyNK6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807276755709-1qhofof485sihremmlc372oiq45lrmv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

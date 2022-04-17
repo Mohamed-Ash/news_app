@@ -24,9 +24,9 @@ class NewsCubit extends Cubit<NewsState> {
         icon: Icon(Icons.settings), label: 'Settings'),
   ];
   List<Widget> screens = [
-    const TechnologyScreen(),
-    const SportsScreen(),
-    const  SciencesScreen(),
+     TechnologyScreen(),
+     SportsScreen(),
+      //SciencesScreen(),
     const  SettingsScreen(),
   ];
 
@@ -48,7 +48,7 @@ class NewsCubit extends Cubit<NewsState> {
     ).then((value) {
       technology = value.data['articles'];
       print(technology[0]);
-      emit(NewsGetTechnologyLoadingState());
+      emit(ApiDataLoadedState());
     }).catchError((error) {
       print(error.toString());
       emit(NewsGetTechnologyErrorState(error.toString()));

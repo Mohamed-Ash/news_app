@@ -7,6 +7,7 @@ class NewsInitial extends NewsState {}
 class NewsBottomNavState extends NewsState {}
 class NewsGetTechnologyState extends NewsState {}
 class NewsGetTechnologyLoadingState extends NewsState {}
+class ApiDataLoadedState extends NewsState {}
 class NewsGetTechnologyErrorState extends NewsState
 {
   final String error;
